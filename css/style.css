@@ -50,6 +50,7 @@ ul {
 }
 
 .header-container {
+  height: 52px;
   display: flex;
   align-items: center;
 }
@@ -67,8 +68,8 @@ ul {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  margin-top: 16px;
-  margin-left: 16px;
+  /* margin-top: 16px; */
+
   /* margin-right: 76px; */
 
 }
@@ -161,8 +162,8 @@ ul {
   background-color: #FFFFFF;
   border: none;
   align-items: center;
-  margin-top: 16px;
-  margin-right: 16px;
+  /* margin-top: 16px;
+  margin-right: 16px; */
 }
 
 .icon-header-btn {
@@ -245,10 +246,8 @@ ul {
 .mob-social-icon {
   display: flex;
   gap: 40px;
-  padding-left: 16px;
   padding-right: 24px;
   margin-top: 48px;
-  justify-content: center;
 }
 
 .mob-social-icon-item {
@@ -276,7 +275,12 @@ ul {
 
 .hero {
   background: #2e2f42;
-
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)),
+    url(../images/hero/main-bg-mob.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-wrap {
@@ -286,18 +290,14 @@ ul {
   /* padding-top: 188px;
     padding-bottom: 188px; */
   padding: 72px 52px 72px 52px;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)),
-    url(../images/hero/main-bg-mob.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+
+
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:2),
 (min-resolution: 192dpi),
 (min-resolution: 2dppi) {
-  .hero-wrap {
+  .hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)),
       url(../images/hero/main-bg-mod-2x.jpg);
@@ -433,7 +433,7 @@ ul {
   background-color: #FFFFFF;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-  width: 260px;
+
 }
 
 .team-item-img {
@@ -779,7 +779,7 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -988,12 +988,12 @@ ul {
   }
 
   /* ----------------------HEADER-------------------------- */
-  .header {
-    height: 72px;
+  .nav-link.current::after {
+    bottom: 6px;
   }
 
   .logo {
-    margin-top: 24px;
+
     margin-right: 120px;
   }
 
@@ -1008,6 +1008,10 @@ ul {
     gap: 0;
   }
 
+  .address-link {
+    font-size: 12px;
+  }
+
   .header-menu-btn {
     display: none;
   }
@@ -1015,14 +1019,18 @@ ul {
 
   /* ----------------------HERO-------------------------- */
   .hero-wrap {
-    padding: 112px 136px 204px 136px;
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+
+  .hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/main-bg-tab.jpg);
   }
 
   @media screen and (-webkit-min-device-pixel-ratio:2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppi) {
-    .hero-wrap {
+    .hero {
       background-image: linear-gradient(rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)),
         url(../images/hero/main-bg-tab-2x.jpg);
@@ -1040,6 +1048,10 @@ ul {
     gap: 72px 24px;
   }
 
+  .feature-subtitle {
+    text-align: left;
+  }
+
   .feature-item {
     width: calc((100% - 24px) / 2);
   }
@@ -1049,9 +1061,6 @@ ul {
     gap: 64px 24px;
   }
 
-  .team-item {
-    width: calc((100% - 24px) / 3);
-  }
 
   /* ----------------------PORTFOLIO-------------------------- */
   .portfolio-list {
@@ -1063,6 +1072,19 @@ ul {
   }
 
   /* ----------------------FOOTER-------------------------- */
+
+  .container-footer {
+    align-items: baseline;
+  }
+
+  .first-part-footer {
+    align-items: start;
+  }
+
+  .social-media-title {
+    text-align: left;
+  }
+
   .emeil-text {
     text-align: start;
   }
@@ -1070,7 +1092,8 @@ ul {
   /* ----------------------MODAL-------------------------- */
   .modal {
     width: 408px;
-    min-height: 584px
+    min-height: 584px;
+    padding: 72px 24px 24px;
   }
 
   .modal-input {
@@ -1080,6 +1103,10 @@ ul {
   .modal-text {
     width: 360px;
   }
+}
+
+.mob-menu {
+  display: none;
 }
 
 /* ----------------------DESKTOP-------------------------- */
@@ -1109,13 +1136,17 @@ ul {
   .hero-wrap {
     padding-top: 188px;
     padding-bottom: 188px;
+
+  }
+
+  .hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/main-bg.jpg);
   }
 
   @media screen and (-webkit-min-device-pixel-ratio:2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppi) {
-    .hero-wrap {
+    .hero {
       background-image: linear-gradient(rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)),
         url(../images/hero/main-bg-2x.jpg);
@@ -1199,6 +1230,7 @@ ul {
     align-items: baseline;
     justify-content: flex-start;
     flex-wrap: nowrap;
+    gap: 0;
   }
 
   .footer {
@@ -1213,6 +1245,8 @@ ul {
   .social-media {
     margin-right: 80px;
   }
+
+
 
   .input-email {
     width: 264px;
