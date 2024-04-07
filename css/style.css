@@ -41,7 +41,7 @@ ul {
 }
 
 .header {
-  height: 56px;
+
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
@@ -50,9 +50,9 @@ ul {
 }
 
 .header-container {
-  height: 52px;
   display: flex;
   align-items: center;
+  height: 56px;
 }
 
 .navigation {
@@ -909,6 +909,7 @@ ul {
 }
 
 .check-text {
+  display: inline-flex;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
@@ -933,6 +934,25 @@ ul {
   display: inline-flex;
 }
 
+.text-privacy {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+
+}
+
+.check-link {
+  /* font-weight: 400;
+  font-size: 12px; */
+  color: #4d5ae5;
+  /* margin-left: 4px; */
+  line-height: 1.33333;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
 .modal-check-icon {
   position: absolute;
   top: 50%;
@@ -940,12 +960,7 @@ ul {
   transform: translate(-50%, -50%);
 }
 
-.check-link {
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: #4d5ae5;
-  margin-left: 4px;
-}
+
 
 .modal-check:checked+.check-text .check-text-icon {
   background-color: #404bbf;
@@ -989,7 +1004,11 @@ ul {
 
   /* ----------------------HEADER-------------------------- */
   .nav-link.current::after {
-    bottom: 6px;
+    bottom: -1px;
+  }
+
+  .header-container {
+    height: auto;
   }
 
   .logo {
@@ -1075,6 +1094,8 @@ ul {
 
   .container-footer {
     align-items: baseline;
+    justify-content: start;
+    margin-right: 108px;
   }
 
   .first-part-footer {
@@ -1103,10 +1124,11 @@ ul {
   .modal-text {
     width: 360px;
   }
-}
 
-.mob-menu {
-  display: none;
+
+  .mob-menu {
+    display: none;
+  }
 }
 
 /* ----------------------DESKTOP-------------------------- */
@@ -1129,6 +1151,10 @@ ul {
   .address-list {
     display: flex;
     gap: 40px;
+  }
+
+  .address-link {
+    font-size: 16px;
   }
 
   /* ----------------------HERO-------------------------- */
